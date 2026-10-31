@@ -1,0 +1,44 @@
+[data-theme=light]{--bg:#f3f5fb;--card:#ffffffd9;--text:#16213a;--muted:#667391;--bd:#e1e6f2;--sh:0 8px 30px #1b2a4118}
+[data-theme=dark]{--bg:#0c1122;--card:#161d38d9;--text:#eaf0ff;--muted:#93a0c4;--bd:#283154;--sh:0 8px 30px #0009}
+[data-accent=indigo]{--a1:#6366f1;--a2:#a855f7}
+[data-accent=ocean]{--a1:#0ea5e9;--a2:#22d3ee}
+[data-accent=emerald]{--a1:#10b981;--a2:#84cc16}
+[data-accent=sunset]{--a1:#f97316;--a2:#ec4899}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .3s,color .3s}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(650px 420px at 8% 0,color-mix(in srgb,var(--a1) 32%,transparent),transparent),radial-gradient(650px 420px at 100% 100%,color-mix(in srgb,var(--a2) 30%,transparent),transparent)}
+.wrap{max-width:1000px;margin:0 auto;padding:20px 16px 60px}
+.glass,.card{background:var(--card);backdrop-filter:blur(14px);border:1px solid var(--bd);border-radius:18px;box-shadow:var(--sh);padding:18px}
+form.card{display:flex;flex-direction:column;gap:10px;max-width:420px;margin:40px auto}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.logo{margin:0;font-size:1.6rem;font-weight:800;background:linear-gradient(90deg,var(--a1),var(--a2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.dots{display:flex;gap:7px}
+input,select,textarea{width:100%;padding:11px 13px;border-radius:12px;border:1px solid var(--bd);background:var(--card);color:var(--text);font:inherit}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--a1)}
+button{padding:11px 18px;border:0;border-radius:12px;font:inherit;font-weight:600;color:#fff;cursor:pointer;background:linear-gradient(135deg,var(--a1),var(--a2));transition:.2s}
+button:hover{transform:translateY(-1px);filter:brightness(1.08)}button:disabled{opacity:.5;cursor:not-allowed}
+.ghost,.secondary{background:var(--card);color:var(--text);border:1px solid var(--bd)}
+.danger{background:linear-gradient(135deg,#ef4444,#f97316)}
+.dot{width:24px;height:24px;min-width:0;padding:0;border-radius:50%;border:2px solid var(--bd)}.dot.on{outline:2px solid var(--text);outline-offset:2px}
+.err,.error{background:#ef444422;color:#ef4444;padding:10px 14px;border-radius:12px;margin:10px 0}
+.muted{color:var(--muted)}.center{text-align:center}.link{color:var(--a1);cursor:pointer;text-align:center}
+.row{display:flex;gap:10px;flex-wrap:wrap}.row>*{flex:1;min-width:130px}
+@media(max-width:600px){.wrap{padding:14px 10px}}
+.search{display:flex;gap:8px;flex-wrap:wrap}.search input{flex:1;min-width:180px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.chip{padding:6px 14px;font-size:.85rem}
+.hero{border-radius:26px;padding:26px;color:#fff;display:flex;gap:20px;align-items:center;flex-wrap:wrap;box-shadow:var(--sh);background:linear-gradient(135deg,var(--a1),var(--a2));margin-top:8px}
+.hero.sky-clear{background:linear-gradient(135deg,#f59e0b,#f97316 55%,#ec4899)}
+.hero.sky-clouds{background:linear-gradient(135deg,#64748b,#94a3b8)}
+.hero.sky-rain{background:linear-gradient(135deg,#1e3a8a,#3b82f6)}
+.hero.sky-storm{background:linear-gradient(135deg,#312e81,#7c3aed)}
+.hero.sky-snow{background:linear-gradient(135deg,#38bdf8,#a5b4fc)}
+.hero.night{filter:brightness(.78) saturate(1.15)}
+.hero img{width:120px;filter:drop-shadow(0 4px 10px #0005)}.hero h2{margin:0}.hero p{margin:4px 0}
+.big{font-size:4.2rem;font-weight:800;line-height:1}.cap{text-transform:capitalize}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:12px;margin-top:16px}
+.tile small{color:var(--muted)}.tile b{display:block;font-size:1.3rem;margin-top:4px}
+h3.sec{margin:28px 0 12px}
+.hourly{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px}
+.hr{min-width:88px;text-align:center;padding:12px 8px}.hr img,.day img{width:56px}
+.days{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}.day{text-align:center}
+.skel{animation:p 1s infinite alternate}@keyframes p{to{opacity:.45}}
